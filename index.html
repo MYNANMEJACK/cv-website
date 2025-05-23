@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junxian Chen - Resume</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .resume {
+            background: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            min-height: 100vh;
+        }
+
+        /* Left Sidebar */
+        .sidebar {
+            background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px 30px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #bdc3c7;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #2c3e50;
+            border: 4px solid white;
+            overflow: hidden;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .name {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .name h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+            font-weight: 300;
+        }
+
+        .name .title {
+            color: #3498db;
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .contact-item i {
+            width: 20px;
+            margin-right: 15px;
+            color: #3498db;
+        }
+
+        .skills-section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        .skill-category {
+            margin-bottom: 20px;
+        }
+
+        .skill-category h4 {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #ecf0f1;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            background: rgba(52, 152, 219, 0.2);
+            margin: 5px 0;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        /* Right Main Content */
+        .main-content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .main-section-title {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .main-section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 30px;
+            background: #3498db;
+            border-radius: 2px;
+        }
+
+        .about-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .experience-item::before, .education-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: #3498db;
+            border-radius: 50%;
+        }
+
+        .job-title, .degree-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .company, .school {
+            font-size: 16px;
+            color: #3498db;
+            margin-bottom: 5px;
+        }
+
+        .date {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+
+        .job-description {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .job-description ul {
+            margin-left: 20px;
+        }
+
+        .job-description li {
+            margin-bottom: 5px;
+        }
+
+        /* GitHub Links Styling */
+        .company a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .company a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        .company a i {
+            margin-right: 8px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .resume {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                padding: 30px 20px;
+            }
+            
+            .main-content {
+                padding: 30px 20px;
+            }
+            
+            .name h1 {
+                font-size: 24px;
+            }
+        }
+
+        /* Animation Effects */
+        .resume {
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .skill-category {
+            transition: transform 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateX(5px);
+        }
+
+        .skills-list li {
+            transition: all 0.3s ease;
+        }
+
+        .skills-list li:hover {
+            background: rgba(52, 152, 219, 0.4);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="resume">
+            <!-- Left Sidebar -->
+            <aside class="sidebar">
+                <div class="profile-img">
+                    <img src="DSCF0041.JPG" alt="Junxian Chen Profile Photo">
+                </div>
+                
+                <div class="name">
+                    <h1>JUNXIAN CHEN</h1>
+                    <div class="title">IT Professional</div>
+                </div>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Room17,4/F,HEI YIU HOUSE,<br>LAI YIU EST KWAICHUNG NT</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+852-51123043</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>chen51123043@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/MYNANMEJACK" target="_blank" style="color: #3498db; text-decoration: none;">github.com/MYNANMEJACK</a>
+                    </div>
+                </div>
+
+                <div class="skills-section">
+                    <h3 class="section-title">Skills</h3>
+                    
+                    <div class="skill-category">
+                        <h4>Programming Languages</h4>
+                        <ul class="skills-list">
+                            <li>Java</li>
+                            <li>PHP</li>
+                            <li>C#</li>
+                            <li>SQL</li>
+                            <li>Python</li>
+                            <li>Dart</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Frontend Technologies</h4>
+                        <ul class="skills-list">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>Angular</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Mobile Development & Tools</h4>
+                        <ul class="skills-list">
+                            <li>Flutter</li>
+                            <li>Xcode</li>
+                            <li>VirtualBox</li>
+                            <li>Ubuntu</li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="main-content">
+                <section class="section">
+                    <h2 class="main-section-title">About Me</h2>
+                    <p class="about-text">
+                        I am an enthusiastic and dedicated individual with a strong interest in information technology. To enhance my technical expertise, I have completed a comprehensive IT program at Hong Kong College of Technology, where I developed proficiency in a wide range of programming languages including Java, PHP, C#, SQL, Node.js, Python, Angular, Dart, HTML, and CSS. Additionally, I acquired foundational knowledge in networking and virtualization technologies, including hands-on experience with VirtualBox and Ubuntu. I am now seeking an opportunity to contribute my skills and continue growing within a professional IT environment.
+                    </p>
+                </section>
+
+                <section class="section">
+                    <h2 class="main-section-title">Experience</h2>
+                    <div class="experience-item">
+                        <div class="job-title">Warehouseman</div>
+                        <div class="company">SUN YA PUBLICATIONS (HK) LTD.</div>
+                        <div class="date">June 2020 - June 2022</div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Handled branch order processing and delivery</li>
+                                <li>Assisted in coordinating school activities and events</li>
+                                <li>Supported daily warehouse operations and inventory tasks</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="main-section-title">Projects</h2>
+                    <div class="experience-item">
+                        <div class="job-title">GogoApp</div>
+                        <div class="company"><a href="https://github.com/MYNANMEJACK/gogoapp" target="_blank"><i class="fab fa-github"></i> MYNANMEJACK/gogoapp</a></div>
+                        <div class="job-description">
+                            <p>Mobile application project demonstrating modern app development techniques.</p>
+                        </div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="job-title">Gogo</div>
+                        <div class="company"><a href="https://github.com/MYNANMEJACK/gogo" target="_blank"><i class="fab fa-github"></i> MYNANMEJACK/gogo</a></div>
+                        <div class="job-description">
+                            <p>Web application showcasing frontend and backend development skills.</p>
+                        </div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="job-title">Travel Expense Tracker</div>
+                        <div class="company"><a href="https://github.com/MYNANMEJACK/travel-expense-tracker" target="_blank"><i class="fab fa-github"></i> MYNANMEJACK/travel-expense-tracker</a></div>
+                        <div class="job-description">
+                            <p>A comprehensive travel expense management application with expense tracking and reporting features.</p>
+                        </div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="job-title">My Project</div>
+                        <div class="company"><a href="https://github.com/MYNANMEJACK/my-project" target="_blank"><i class="fab fa-github"></i> MYNANMEJACK/my-project</a></div>
+                        <div class="job-description">
+                            <p>Personal development project exploring various programming concepts and technologies.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="main-section-title">Education</h2>
+                    <div class="education-item">
+                        <div class="degree-title">Higher Diploma in Computer Studies - Mobile App and Game Development</div>
+                        <div class="school">Hong Kong College of Technology</div>
+                        <div class="date">2023 - Present (Expected graduation: 2025)</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="degree-title">Diploma Yi Jin Programme - Smart Technology Applications and Mobile App Development</div>
+                        <div class="school">Hong Kong College of Technology</div>
+                        <div class="date">2022 - 2023</div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Add interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Skill tag click effects
+            const skillItems = document.querySelectorAll('.skills-list li');
+            skillItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.style.background = 'rgba(52, 152, 219, 0.6)';
+                    setTimeout(() => {
+                        this.style.background = 'rgba(52, 152, 219, 0.2)';
+                    }, 200);
+                });
+            });
+
+            // Smooth scroll effects
+            const sections = document.querySelectorAll('.section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'slideUp 0.6s ease-out';
+                    }
+                });
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
