@@ -42,8 +42,8 @@ cv/
 
 ### Professional Skills
 - **Programming Languages**: Java, PHP, C#, SQL, Python, Dart
-- **Frontend Technologies**: HTML, CSS, JavaScript, Angular
-- **Mobile Development**: Flutter, Xcode
+- **Frontend Technologies**: HTML, CSS, JavaScript, Angular, Bootstrap, Node.js
+- **Mobile Development**: Flutter, Xcode, Ionic
 - **System Tools**: VirtualBox, Ubuntu
 
 ### Work Experience
